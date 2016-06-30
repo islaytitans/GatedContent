@@ -5,6 +5,30 @@ VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JonathanRobbins.GatedContent", "JonathanRobbins.GatedContent\JonathanRobbins.GatedContent.csproj", "{80333F8B-521B-4927-83E3-CBC79E661F18}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lib", "Lib", "{021C2481-4A9D-46F8-851E-BD1FC6519891}"
+	ProjectSection(SolutionItems) = preProject
+		Lib\Sitecore.Analytics.Core.dll = Lib\Sitecore.Analytics.Core.dll
+		Lib\Sitecore.Analytics.DataAccess.dll = Lib\Sitecore.Analytics.DataAccess.dll
+		Lib\Sitecore.Analytics.dll = Lib\Sitecore.Analytics.dll
+		Lib\Sitecore.Analytics.Model.dll = Lib\Sitecore.Analytics.Model.dll
+		Lib\Sitecore.Analytics.Outcome.dll = Lib\Sitecore.Analytics.Outcome.dll
+		Lib\Sitecore.Cintel.dll = Lib\Sitecore.Cintel.dll
+		Lib\Sitecore.Client.dll = Lib\Sitecore.Client.dll
+		Lib\Sitecore.ContentSearch.dll = Lib\Sitecore.ContentSearch.dll
+		Lib\Sitecore.ContentSearch.Linq.dll = Lib\Sitecore.ContentSearch.Linq.dll
+		Lib\Sitecore.Forms.Core.dll = Lib\Sitecore.Forms.Core.dll
+		Lib\Sitecore.Forms.Custom.dll = Lib\Sitecore.Forms.Custom.dll
+		Lib\Sitecore.Kernel.dll = Lib\Sitecore.Kernel.dll
+		Lib\Sitecore.WFFM.Abstractions.dll = Lib\Sitecore.WFFM.Abstractions.dll
+		Lib\Sitecore.WFFM.Actions.dll = Lib\Sitecore.WFFM.Actions.dll
+		Lib\Sitecore.WFFM.Analytics.dll = Lib\Sitecore.WFFM.Analytics.dll
+		Lib\Sitecore.WFFM.Client.dll = Lib\Sitecore.WFFM.Client.dll
+		Lib\Sitecore.WFFM.dll = Lib\Sitecore.WFFM.dll
+		Lib\Sitecore.WFFM.Services.dll = Lib\Sitecore.WFFM.Services.dll
+		Lib\Sitecore.WFFM.Speak.dll = Lib\Sitecore.WFFM.Speak.dll
+		Lib\Sitecore.Xdb.Configuration.dll = Lib\Sitecore.Xdb.Configuration.dll
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

@@ -244,3 +244,4 @@ ModelManifest.xml
 # FAKE - F# Make
 .fake/
 /JonathanRobbins.GatedContent/JonathanRobbins.GatedContent/App_Config/Include
+/JonathanRobbins.GatedContent/Lib
