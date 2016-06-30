@@ -9,6 +9,7 @@ namespace JonathanRobbins.GatedContent
     public class Constants
     {
         public const string GatedAccessCookeName = "GrantAccess";
-        public const string AccessGrantedCookieValue = "1";
+        public const string AccessGrantedCookieValue = "AccessGranted";
+        public const string GatedAccessLevelledCookeName = "GrantLevelledAccess";
     }
 }

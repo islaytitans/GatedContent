@@ -9,8 +9,10 @@ using Sitecore.Rules.Conditions;
 
 namespace JonathanRobbins.GatedContent.Rules
 {
-    public class GrantGatedAccessCondition<T> : IntegerComparisonCondition<T> where T : RuleContext
+    public class GrantGatedAccessLevelledCondition<T> : IntegerComparisonCondition<T> where T : RuleContext
     {
+        public string Level { get; set; }
+
         private Utility _utility;
         public Utility Utility
         {
@@ -28,17 +30,22 @@ namespace JonathanRobbins.GatedContent.Rules
 
         protected override bool Execute(T ruleContext)
         {
-            string cookieName = Utility.DefineCookieName();
+            string cookieName = Utility.DefineLevelledCookieName();
 
             if (HttpContext.Current.Request.Cookies[cookieName] == null)
                 return false;
 
-            var actualVal = HttpContext.Current.Request.Cookies[cookieName].Value;
-
-            if (String.IsNullOrEmpty(actualVal))
+            var actualLevel = HttpContext.Current.Request.Cookies[cookieName].Value;
+            if (string.IsNullOrEmpty(actualLevel))
                 return false;
 
-            return Constants.AccessGrantedCookieValue.Equals(actualVal, StringComparison.InvariantCultureIgnoreCase);
+            int requiredLevelInt;
+            int.TryParse(Level, out requiredLevelInt);
+
+            int actualLevelInt;
+            int.TryParse(actualLevel, out actualLevelInt);
+
+            return actualLevelInt >= requiredLevelInt;
         }
     }
 }

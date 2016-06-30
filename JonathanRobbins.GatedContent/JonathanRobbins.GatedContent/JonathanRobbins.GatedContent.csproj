@@ -57,6 +57,7 @@
     <Compile Include="Pipelines\SuccessAction\SuccessGatedContentRedirect.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Rules\GrantGatedAccessCondition.cs" />
+    <Compile Include="Rules\GrantGatedAccessLevelledCondition.cs" />
     <Compile Include="SaveActions\GrantGatedAccess.cs" />
     <Compile Include="SaveActions\GrantGatedLevelledAccess.cs" />
     <Compile Include="Utility.cs" />

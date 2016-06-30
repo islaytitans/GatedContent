@@ -10,9 +10,14 @@ namespace JonathanRobbins.GatedContent
 {
     public class Utility
     {
-        public virtual string DefineCookieName(string level)
+        public virtual string DefineCookieName()
         {
-            return Constants.AccessGrantedCookieValue + level;
+            return Constants.GatedAccessCookeName;
+        }
+
+        public virtual string DefineLevelledCookieName()
+        {
+            return Constants.GatedAccessLevelledCookeName;
         }
 
         public virtual int GetCookieLifeSpan()
