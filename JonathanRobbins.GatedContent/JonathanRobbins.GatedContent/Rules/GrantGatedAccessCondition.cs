@@ -9,7 +9,7 @@ using Sitecore.Rules.Conditions;
 
 namespace JonathanRobbins.GatedContent.Rules
 {
-    class GrantGatedAccessCondition<T> : StringOperatorCondition<T> where T : RuleContext
+    public class GrantGatedAccessCondition<T> : StringOperatorCondition<T> where T : RuleContext
     {
         protected override bool Execute(T ruleContext)
         {

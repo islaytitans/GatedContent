@@ -21,14 +21,10 @@ namespace JonathanRobbins.GatedContent.Pipelines.SuccessAction
         {
             Assert.IsNotNull((object)args, "args");
 
-            if (args.Form != null)
+            if (args.Form != null && !args.Form.SuccessRedirect && FormHasGrantGatedAccessSaveAction(args))
             {
-                if (!args.Form.SuccessRedirect && FormHasGrantGatedAccessSaveAction(args))
-                {
-                    string urlString = HttpContext.Current.Request.Url.AbsoluteUri;
-
-                    WebUtil.Redirect(urlString, true);
-                }
+                string urlString = HttpContext.Current.Request.Url.AbsoluteUri;
+                WebUtil.Redirect(urlString, true);
             }
         }
 
