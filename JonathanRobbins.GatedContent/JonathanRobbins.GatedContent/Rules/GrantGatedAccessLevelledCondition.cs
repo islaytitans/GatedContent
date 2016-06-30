@@ -11,7 +11,10 @@ namespace JonathanRobbins.GatedContent.Rules
 {
     public class GrantGatedAccessLevelledCondition<T> : IntegerComparisonCondition<T> where T : RuleContext
     {
+        public int No { get; set; }
+
         private Utility _utility;
+
         public Utility Utility
         {
             get
@@ -42,6 +45,8 @@ namespace JonathanRobbins.GatedContent.Rules
             {
                 return false;
             }
+
+            Value = No;
 
             return Compare(actualLevelInt);
         }
