@@ -38,7 +38,7 @@ namespace JonathanRobbins.GatedContent.Rules
             if (String.IsNullOrEmpty(actualVal))
                 return false;
 
-            return Constants.AccessGrantedCookieValue.Equals(actualVal, StringComparison.InvariantCultureIgnoreCase);
+            return true;
         }
     }
 }

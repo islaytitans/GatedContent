@@ -30,7 +30,7 @@ namespace JonathanRobbins.GatedContent.Rules
 
         protected override bool Execute(T ruleContext)
         {
-            string cookieName = Utility.DefineLevelledCookieName();
+            string cookieName = Utility.DefineCookieName();
 
             if (HttpContext.Current.Request.Cookies[cookieName] == null)
                 return false;
@@ -43,7 +43,10 @@ namespace JonathanRobbins.GatedContent.Rules
             int.TryParse(Level, out requiredLevelInt);
 
             int actualLevelInt;
-            int.TryParse(actualLevel, out actualLevelInt);
+            if (!int.TryParse(actualLevel, out actualLevelInt))
+            {
+                return false;
+            }
 
             return actualLevelInt >= requiredLevelInt;
         }

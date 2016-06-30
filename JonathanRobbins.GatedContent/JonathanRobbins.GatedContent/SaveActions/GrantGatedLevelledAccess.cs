@@ -32,7 +32,7 @@ namespace JonathanRobbins.GatedContent.SaveActions
         {
             string level = DetermineLevel(actionCallContext);
 
-            HttpCookie cookie = new HttpCookie(Utility.DefineLevelledCookieName())
+            HttpCookie cookie = new HttpCookie(Utility.DefineCookieName())
             {
                 Value = level,
                 Expires = DateTime.Now.AddDays(Utility.GetCookieLifeSpan())

@@ -15,11 +15,6 @@ namespace JonathanRobbins.GatedContent
             return Constants.GatedAccessCookeName;
         }
 
-        public virtual string DefineLevelledCookieName()
-        {
-            return Constants.GatedAccessLevelledCookeName;
-        }
-
         public virtual int GetCookieLifeSpan()
         {
             string daysString = Sitecore.Configuration.Settings.GetSetting("CookieLifeSpanInDays");
