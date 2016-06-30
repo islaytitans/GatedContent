@@ -39,6 +39,9 @@
     <Reference Include="Sitecore.WFFM.Abstractions">
       <HintPath>..\Lib\Sitecore.WFFM.Abstractions.dll</HintPath>
     </Reference>
+    <Reference Include="Sitecore.WFFM.Actions">
+      <HintPath>..\Lib\Sitecore.WFFM.Actions.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web" />
@@ -52,6 +55,7 @@
   <ItemGroup>
     <Compile Include="Pipelines\SuccessAction\SuccessGatedContentRedirect.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SaveActions\GrantGatedAccess.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
