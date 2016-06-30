@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 using Sitecore.Data;
+using Sitecore.Diagnostics;
 using Sitecore.Publishing.Pipelines.PublishItem;
 using Sitecore.WFFM.Abstractions.Actions;
 using Sitecore.WFFM.Actions.Base;
@@ -13,6 +14,8 @@ namespace JonathanRobbins.GatedContent.SaveActions
 {
     public class GrantGatedLevelledAccess : WffmSaveAction
     {
+        public string Level { get; set; }
+
         private Utility _utility;
         public Utility Utility
         {
@@ -30,33 +33,20 @@ namespace JonathanRobbins.GatedContent.SaveActions
 
         public override void Execute(ID formId, AdaptedResultList adaptedFields, ActionCallContext actionCallContext = null, params object[] data)
         {
-            string level = DetermineLevel(actionCallContext);
+            if (string.IsNullOrEmpty(Level))
+            {
+                Log.Error("The level of Gated Access has not been set on the Save Action - " 
+                    + ActionID.ToString() + ". Please ensure it is set correct i.e. <Level>1</Level> in the parameters field", this);
+                Level = string.Empty;
+            }
 
             HttpCookie cookie = new HttpCookie(Utility.DefineCookieName())
             {
-                Value = level,
+                Value = Level,
                 Expires = DateTime.Now.AddDays(Utility.GetCookieLifeSpan())
             };
 
             HttpContext.Current.Response.Cookies.Add(cookie);
-        }
-
-        private string DetermineLevel(ActionCallContext actionCallContext)
-        {
-            string level = string.Empty;
-
-            if (actionCallContext != null && actionCallContext.Parameters.Any())
-            {
-                var levelParam = actionCallContext.Parameters.FirstOrDefault(
-                        p => p.Key.Equals("level", StringComparison.InvariantCultureIgnoreCase));
-
-                if (!string.IsNullOrEmpty(levelParam.Value.ToString()))
-                {
-                    level = levelParam.Value.ToString();
-                }
-            }
-
-            return level;
         }
     }
 }

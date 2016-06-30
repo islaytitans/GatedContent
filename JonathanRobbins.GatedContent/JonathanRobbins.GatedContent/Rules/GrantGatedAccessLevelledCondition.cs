@@ -11,8 +11,6 @@ namespace JonathanRobbins.GatedContent.Rules
 {
     public class GrantGatedAccessLevelledCondition<T> : IntegerComparisonCondition<T> where T : RuleContext
     {
-        public string Level { get; set; }
-
         private Utility _utility;
         public Utility Utility
         {
@@ -39,16 +37,13 @@ namespace JonathanRobbins.GatedContent.Rules
             if (string.IsNullOrEmpty(actualLevel))
                 return false;
 
-            int requiredLevelInt;
-            int.TryParse(Level, out requiredLevelInt);
-
             int actualLevelInt;
             if (!int.TryParse(actualLevel, out actualLevelInt))
             {
                 return false;
             }
 
-            return actualLevelInt >= requiredLevelInt;
+            return Compare(actualLevelInt);
         }
     }
 }

@@ -13,7 +13,7 @@ using Sitecore.Xml;
 
 namespace JonathanRobbins.GatedContent.Pipelines.SuccessAction
 {
-    public class SuccessGatedContentRedirect : ClientPipelineArgs
+    public class SuccessGatedAccessRedirect : ClientPipelineArgs
     {
         private List<string> _gatedContentSaveActionIds = new List<string>();
 
