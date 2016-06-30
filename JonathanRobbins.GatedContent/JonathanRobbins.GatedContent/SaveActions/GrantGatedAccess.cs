@@ -15,9 +15,9 @@ namespace JonathanRobbins.GatedContent.SaveActions
         public override void Execute(ID formId, AdaptedResultList adaptedFields, ActionCallContext actionCallContext = null,
             params object[] data)
         {
-            HttpCookie cookie = new HttpCookie("Gated Access")
+            HttpCookie cookie = new HttpCookie(Constants.GatedAccessCookeName)
             {
-                Value = "1",
+                Value = Constants.AccessGrantedCookieValue,
                 Expires = DateTime.Today.AddYears(10),
             };
 

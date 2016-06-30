@@ -53,8 +53,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Constants.cs" />
     <Compile Include="Pipelines\SuccessAction\SuccessGatedContentRedirect.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rules\GrantGatedAccessCondition.cs" />
     <Compile Include="SaveActions\GrantGatedAccess.cs" />
   </ItemGroup>
   <ItemGroup />
