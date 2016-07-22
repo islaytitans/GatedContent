@@ -65,6 +65,11 @@
   <ItemGroup />
   <ItemGroup>
     <None Include="App_Config\Include\JonathanRobbins.GatedContent.config" />
+    <None Include="serialization\master\sitecore\system\Modules\Web Forms for Marketers\Settings\Actions\Save Actions\Grant Access to Gated Content.item" />
+    <None Include="serialization\master\sitecore\system\Modules\Web Forms for Marketers\Settings\Actions\Save Actions\Grant Level 1 Access to Gated Content.item" />
+    <None Include="serialization\master\sitecore\system\Modules\Web Forms for Marketers\Settings\Actions\Save Actions\Grant Level 2 Access to Gated Content.item" />
+    <None Include="serialization\master\sitecore\system\Settings\Rules\Definitions\Elements\Visitor\Grant gated access.item" />
+    <None Include="serialization\master\sitecore\system\Settings\Rules\Definitions\Elements\Visitor\Grant levelled gated access.item" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
